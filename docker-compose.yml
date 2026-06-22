@@ -1,0 +1,14 @@
+services:
+  homelab-agent:
+    build: .
+    container_name: homelab-agent
+    restart: unless-stopped
+    environment:
+      HOMELAB_URL: "https://your-homelab-url"
+      HOMELAB_AGENT_TOKEN: "replace-with-generated-token"
+      HOMELAB_AGENT_NAME: "docker-host-01"
+      HOMELAB_POLL_SECONDS: "30"
+      HOMELAB_VERIFY_TLS: "true"
+      DOCKER_HOST: "unix:///var/run/docker.sock"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
