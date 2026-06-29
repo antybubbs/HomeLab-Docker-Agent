@@ -1,4 +1,4 @@
-# HomeLab Docker Agent
+# Kaya Docker Agent
 
 Read-only Docker inventory and metrics agent for HomeLab.
 
